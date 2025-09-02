@@ -1,6 +1,6 @@
 (function() {
   // Укажи здесь ID нужного поля сделки
-  const targetFields = ["467281"]; 
+  const targetFields = ["880761"]; 
 
   // Функция добавления кнопки рядом с полем
   function addButton(field) {
@@ -59,3 +59,4 @@
     destroy: function() {}
   };
 })();
+
