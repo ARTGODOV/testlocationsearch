@@ -1,13 +1,12 @@
 (function() {
-  const CONFIG = {
-    fields: [] // сюда загрузим из настроек
-  };
+  // Укажи здесь ID нужного поля сделки
+  const targetFields = ["467281"]; 
 
-  // Функция вставки кнопки
+  // Функция добавления кнопки рядом с полем
   function addButton(field) {
     if (!field) return;
 
-    // Чтобы не дублировались
+    // Чтобы не дублировать кнопку
     if (field.parentNode.querySelector("button.yamap-btn")) return;
 
     const btn = document.createElement("button");
@@ -30,10 +29,10 @@
     field.parentNode.appendChild(btn);
   }
 
-  // Наблюдатель за DOM
+  // Следим за DOM и вставляем кнопку при открытии карточки
   function initObserver() {
     const observer = new MutationObserver(() => {
-      CONFIG.fields.forEach(id => {
+      targetFields.forEach(id => {
         const field = document.querySelector(`[data-id="${id}"] input`);
         if (field) addButton(field);
       });
@@ -45,11 +44,6 @@
   // API amoCRM
   return {
     init: function() {
-      // Получаем настройки из манифеста
-      const settings = AMOCRM.widgets.system.area.settings || {};
-      if (settings.targetFields) {
-        CONFIG.fields = settings.targetFields.split(",").map(f => f.trim());
-      }
       initObserver();
       return true;
     },
