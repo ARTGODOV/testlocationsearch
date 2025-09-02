@@ -1,0 +1,23 @@
+{
+  "widget": {
+    "name": "Поиск в Яндекс.Картах",
+    "short_description": "Кнопка поиска по значению поля в Яндекс.Картах",
+    "description": "Добавляет кнопку рядом с выбранными полями сделки для быстрого поиска в Яндекс.Картах",
+    "version": "1.0.0",
+    "author": "Ваше имя",
+    "support": "https://github.com/ARTGODOV/testlocationsearch/",
+    "install_url": "https://github.com/ARTGODOV/testlocationsearch/",
+    "update_url": "https://github.com/ARTGODOV/testlocationsearch/"
+  },
+  "locations": ["lead.card"],
+  "settings": {
+    "fields": {
+      "targetFields": {
+        "name": "ID полей",
+        "type": "text",
+        "default": "123456,654321",
+        "description": "Список ID полей, рядом с которыми нужно показывать кнопку (через запятую)"
+      }
+    }
+  }
+}
